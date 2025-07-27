@@ -1,0 +1,57 @@
+### Загрузка рекламных площадок из файла
+POST https://localhost:7001/api/AdvertisingPlatform/upload
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="test_data.txt"
+Content-Type: text/plain
+
+Яндекс.Директ:/ru
+Ревдинский рабочий:/ru/svrd/revda,/ru/svrd/pervik
+Газета уральских москвичей:/ru/msk,/ru/permobl,/ru/chelobl
+Крутая реклама:/ru/svrd
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+### Поиск рекламных площадок для локации /ru/msk (POST)
+POST https://localhost:7001/api/AdvertisingPlatform/search
+Content-Type: application/json
+
+{
+  "location": "/ru/msk"
+}
+
+### Поиск рекламных площадок для локации /ru/svrd (POST)
+POST https://localhost:7001/api/AdvertisingPlatform/search
+Content-Type: application/json
+
+{
+  "location": "/ru/svrd"
+}
+
+### Поиск рекламных площадок для локации /ru/svrd/revda (POST)
+POST https://localhost:7001/api/AdvertisingPlatform/search
+Content-Type: application/json
+
+{
+  "location": "/ru/svrd/revda"
+}
+
+### Поиск рекламных площадок для локации /ru (POST)
+POST https://localhost:7001/api/AdvertisingPlatform/search
+Content-Type: application/json
+
+{
+  "location": "/ru"
+}
+
+### Поиск рекламных площадок для локации /ru/msk (GET)
+GET https://localhost:7001/api/AdvertisingPlatform/search/%2Fru%2Fmsk
+
+### Поиск рекламных площадок для локации /ru/svrd (GET)
+GET https://localhost:7001/api/AdvertisingPlatform/search/%2Fru%2Fsvrd
+
+### Поиск рекламных площадок для локации /ru/svrd/revda (GET)
+GET https://localhost:7001/api/AdvertisingPlatform/search/%2Fru%2Fsvrd%2Frevda
+
+### Поиск рекламных площадок для локации /ru (GET)
+GET https://localhost:7001/api/AdvertisingPlatform/search/%2Fru
